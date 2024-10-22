@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage';
 import MainLayout from './layouts/MainLayout';  
 import JobsPage from './pages/JobsPage';
 import NotFoundPage from './pages/NotFoundPage';  
+import JobPage, { jobLoader }  from './pages/JobPage';
+import AddJobPage from './pages/AddJobPage';
 // import Navbar from './components/Navbar';
 // import Hero from './components/Hero';
 // import HomeCards from './components/HomeCards';
@@ -20,6 +22,8 @@ const router = createBrowserRouter(
       <Route index element={ <HomePage/>} />
       <Route path='/jobs' element={ <JobsPage/>} />
       <Route path='*' element={ <NotFoundPage/>} />
+      <Route path='/jobs/:id' element={ <JobPage/>} loader={jobLoader} />
+      <Route path='/add-job' element={ <AddJobPage/>} />
     </Route>
   )
 );
